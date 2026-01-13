@@ -1,0 +1,95 @@
+package dhruvJavaCode;
+import java.util.Scanner;
+public class WeightedGradeCalculator_RST {
+
+	public static void main(String[] args) {
+		
+		// Variables
+		
+		int[] tests = new int[5];
+		int WeightedTests = 0;
+		int testAverage = 0;
+		int rstGrade = 0;
+		int examGrade = 0;
+		int finalGrade = 0;
+		
+		// Initial Launch
+		
+		System.out.println("Welcome to the Weighted Grade Calculator! Enter your test, RST, and Final exam grades for a weighted calculation of your final gradE!");
+		
+		for(int i = 0; i < 5; i++) {
+			
+			tests[i] = inputCollection(i);
+			
+		}
+		
+		testAverage = testAvgCalc(tests);
+		System.out.println(testAverage);
+		
+		
+	}
+
+	public static int inputCollection(int n) {
+		// Initial Variables
+		int i = 0;
+		boolean correct = false;
+		Scanner sc = new Scanner (System.in);		// Closing this scanner blows the code up; so goodbye memory!
+		
+		// Ask for input
+		System.out.println("Input grade #" + (n + 1) + ": ");
+		
+		// Collect and verify INT Input
+		while (correct != true) {
+			
+			try { i = sc.nextInt(); }
+																		// Tiny Try block!! Big catch tho
+			catch (Exception ex) { 
+				
+				System.out.println(ex); 
+				System.out.println("Error! Please input a number!");
+				
+				// Clear Scanner to avoid Scanner pitfall;
+				sc.next();
+				continue;
+				
+				}
+			
+			// Check for error cases, if not return i
+			if (i <= 100 & i >= 0) {
+				
+				correct = true;
+				return i;
+				
+			}
+			// Output error and loop for problem cases
+			else
+				System.out.println("Error! Number too large! Enter a grade value between 0 - 100 !");
+			i = 0;
+
+		}
+		
+		// If it somehow breaks; tell myself (Please never need to work code)
+		System.out.println("Logic error (Somehow!?!?) ; outputting 0");
+		return 0;
+	}
+	
+	public static int testAvgCalc(int[] a) {
+		//Initialize average 
+		int average = 0;
+		
+		// Add 5 grades together
+		for(int i = 0; i < 5; i++) {
+			average = average + a[i];
+		}
+		
+		// Calculate for final average
+		average = (int) Math.floor(average/5);
+		
+		// Return
+		return average;
+		
+	}
+}
+		
+
+

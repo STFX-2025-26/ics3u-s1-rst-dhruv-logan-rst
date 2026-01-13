@@ -15,20 +15,41 @@ public class WeightedGradeCalculator_RST {
 		
 		// Initial Launch
 		
-		System.out.println("Welcome to the Weighted Grade Calculator! Enter your test, RST, and Final exam grades for a weighted calculation of your final gradE!");
+		System.out.println("Welcome to the Weighted Grade Calculator! \nEnter your test, RST, and Final exam grades for an \naccurate calculation of your final grade!");
 		
-		for(int i = 0; i < 5; i++) {
-			
-			tests[i] = inputCollection(i);
-			
+		
+		// Collect Test Grades
+		
+		System.out.println("\n\nFirstly, we will collect your 5 test grades! \nMake sure your inputting the percentage!(Positive number, between 0 - 100, no % sign!) ");
+		
+		for(int i = 0; i < 5; i++) {	
+			tests[i] = inputCollection(i);	
 		}
 		
+		// Collect RST and Exam Grades
+		
+		System.out.println("Now, input your RST and Exam grades (RST first, then exam grade) ");
+		rstGrade = inputCollection(0);
+		
+		examGrade = inputCollection(1);
+		
+		
+		// Calculating Test Average
 		testAverage = testAvgCalc(tests);
 		System.out.println(testAverage);
 		
 		
+		// Calculating weighted grades
+		
+		
+		// Outputting final grade and determining  if user is passing or failing
+		
 	}
 
+	
+	
+	
+	
 	public static int inputCollection(int n) {
 		// Initial Variables
 		int i = 0;

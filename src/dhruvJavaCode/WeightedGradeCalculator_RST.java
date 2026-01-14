@@ -48,7 +48,7 @@ public class WeightedGradeCalculator_RST {
 		
 		// Outputting final grade and determining  if user is passing or failing
 		finalGrade = weightedTests + rstGrade + examGrade;
-		System.out.println(finalGrade);
+		System.out.println(finalGrade); 
 	}
 
 	
@@ -122,7 +122,6 @@ public class WeightedGradeCalculator_RST {
 		final double TEST_WEIGHT = 0.70;
 		final double RST_WEIGHT = 0.10;
 		final double EXAM_WEIGHT = 0.20;
-		int f = 0;
 		
 		// Dictate grade type using type variable
 		

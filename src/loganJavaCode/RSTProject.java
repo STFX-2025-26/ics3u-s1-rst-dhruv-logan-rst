@@ -34,7 +34,7 @@ public class RSTProject {
 			
 			} while (studentNum < 1);
 		
-		
+		System.out.println("Enter the " + studentNum + " student names: ");
 		
 	
 		

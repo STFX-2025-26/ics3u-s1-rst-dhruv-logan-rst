@@ -22,9 +22,10 @@ public class WeightedGradeCalculator_RST {
 		
 		System.out.println("\n\nFirstly, we will collect your 5 test grades! \nMake sure your inputting the percentage!(Positive number, between 0 - 100, no % sign!) ");
 		
-		for(int i = 0; i < 5; i++) {	
+		for(int i = 0; i < 5; i++) {			// Test grade collection Loop
 			tests[i] = inputCollection(i);	
 		}
+		
 		
 		// Collect RST and Exam Grades
 		
@@ -35,37 +36,47 @@ public class WeightedGradeCalculator_RST {
 		
 		
 		// Calculating Test Average
+		
 		testAverage = testAvgCalc(tests);
 		
-		
-		
+
 		// Calculating weighted grades
+		
 		weightedTests = weightedGradeCalc(testAverage,"TEST");		// Test
 		
 		rstGrade = weightedGradeCalc(rstGrade,"RST");		// RST
 		
 		examGrade = weightedGradeCalc(examGrade,"EXAM");		// Exam
 		
+		
 		// Outputting final grade and determining  if user is passing or failing
 		finalGrade = weightedTests + rstGrade + examGrade;
-		System.out.println(finalGrade);
+		
+		// Declare pass or fail, and output 
+		System.out.println("\n\nYour final score, with these grades would be a " + finalGrade + "%, meaning...");
+		
+		if (finalGrade >= 50) 
+			System.out.println("\nCongrats! your passed!");
+		
+		if (finalGrade < 50)
+			System.out.println("\nyou Failed... But dont worry! theres always next year!");
+	
 	}
 
-	
-	
-	
 	
 	public static int inputCollection(int n) {
 		// Initial Variables
 		int i = 0;
 		boolean correct = false;
-		Scanner sc = new Scanner (System.in);		// Closing this scanner blows the code up; so goodbye memory!
+		Scanner sc = new Scanner (System.in);  // Can't move this, can't add sc.close(), so this is now the "Achilles heel" of this method.
+				
 		
 		// Ask for input
 		System.out.println("Input grade #" + (n + 1) + ": ");
 		
 		// Collect and verify INT Input
 		while (correct != true) {
+			
 			
 			try { i = sc.nextInt(); }
 																		// Tiny Try block!! Big catch tho
@@ -82,7 +93,6 @@ public class WeightedGradeCalculator_RST {
 			
 			// Check for error cases, if not return i
 			if (i <= 100 & i >= 0) {
-				
 				correct = true;
 				return i;
 				

@@ -28,7 +28,7 @@ public class WeightedGradeCalculator_RST {
 		
 		// Collect RST and Exam Grades
 		
-		System.out.println("Now, input your RST and Exam grades (RST first, then exam grade) ");
+		System.out.println("\nNow, input your RST and Exam grades (RST first, then exam grade) ");
 		rstGrade = inputCollection(0);
 		
 		examGrade = inputCollection(1);
@@ -36,7 +36,7 @@ public class WeightedGradeCalculator_RST {
 		
 		// Calculating Test Average
 		testAverage = testAvgCalc(tests);
-		System.out.println(testAverage);
+		
 		
 		
 		// Calculating weighted grades
@@ -47,7 +47,8 @@ public class WeightedGradeCalculator_RST {
 		examGrade = weightedGradeCalc(examGrade,"EXAM");		// Exam
 		
 		// Outputting final grade and determining  if user is passing or failing
-		
+		finalGrade = weightedTests + rstGrade + examGrade;
+		System.out.println(finalGrade);
 	}
 
 	
@@ -119,8 +120,8 @@ public class WeightedGradeCalculator_RST {
 		
 		// Initialize weights
 		final double TEST_WEIGHT = 0.70;
-		final double RST_WEIGHT = 0.20;
-		final double EXAM_WEIGHT = 0.10;
+		final double RST_WEIGHT = 0.10;
+		final double EXAM_WEIGHT = 0.20;
 		int f = 0;
 		
 		// Dictate grade type using type variable

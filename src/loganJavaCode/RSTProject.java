@@ -8,11 +8,10 @@ public class RSTProject {
 		// variables 
 		Scanner sc = new Scanner(System.in);
 		int studentNum = 0;
-		String[] studentNames = new String[studentNum];
-		double[] studentAverages = new double[studentNum];
-		char[] letterGrades = new char[studentNum];
+		
 		
 		// get number of students
+		
 		do {
 			
 			System.out.println("Enter the number of students: ");
@@ -22,7 +21,6 @@ public class RSTProject {
 				studentNum = sc.nextInt();
 					
 				}
-			
 			
 			catch (Exception e) {
 				
@@ -34,13 +32,20 @@ public class RSTProject {
 			
 			} while (studentNum < 1);
 		
+		// get student names
+		
+		String[] studentNames = new String[studentNum];
+		double[] studentAverages = new double[studentNum];
+		char[] letterGrades = new char[studentNum];
+		
 		System.out.println("Enter the " + studentNum + " student names: ");
 		
 		for (int i=0; i<studentNum; i++) {
 			
 			studentNames[i] = sc.next();
-			System.out.println(studentNames[i]);
 		}
+		
+		// System.out.println(testAverage(studentNames));
 		
 		
 		
@@ -49,16 +54,38 @@ public class RSTProject {
 
 	}
 	// DESCRIPTION - Collects 4 test scores and determines the average grade
-	// PARAMETERS - int[] x, String[] y
+	// PARAMETERS - String[] a
 	// RETURN TYPE - double[]
-	public static double[] testAverage(int[] x, String[] y) {
-		double[] averages = new double[y.length];
+	public static double[] testAverage(String[] a) {
+		
+		// variables
+		Scanner sc = new Scanner (System.in);
+		double[] averages = new double[a.length];
+		int[] testScores = new int[a.length * 4];
+		int counter = 0;
+		int gradeTotal = 0;
+		
+		for (int i=0; i<a.length; i++) {
+			
+			System.out.println("Enter the 4 test scores of " + a[i] + ":");
+			
+			for (int j=0; j<4; j++) {
+				
+				testScores[counter] = sc.nextInt();
+				counter = counter + 1;
+				
+			}
+		}
+		
+		for (int i=0; i<a.length; i++) {
+			
+			
+		}
 		
 		
 		
 		
-	double[] average = {0};
-	return average;
+		return averages;
 	}
 	
 

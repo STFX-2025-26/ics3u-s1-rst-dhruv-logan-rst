@@ -87,7 +87,7 @@ public class WeightedGradeCalculator_RST {
 				return i;
 				
 			}
-			// Output error and loop for problem cases
+			// Output error and loop for problem cases 
 			else
 				System.out.println("Error! Number too large! Enter a grade value between 0 - 100 !");
 			i = 0;

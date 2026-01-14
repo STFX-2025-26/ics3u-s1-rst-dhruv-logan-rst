@@ -7,8 +7,8 @@ public class WeightedGradeCalculator_RST {
 		// Variables
 		
 		int[] tests = new int[5];
-		int WeightedTests = 0;
 		int testAverage = 0;
+		int weightedTests = 0;
 		int rstGrade = 0;
 		int examGrade = 0;
 		int finalGrade = 0;
@@ -40,7 +40,11 @@ public class WeightedGradeCalculator_RST {
 		
 		
 		// Calculating weighted grades
+		weightedTests = weightedGradeCalc(testAverage,"TEST");		// Test
 		
+		rstGrade = weightedGradeCalc(rstGrade,"RST");		// RST
+		
+		examGrade = weightedGradeCalc(examGrade,"EXAM");		// Exam
 		
 		// Outputting final grade and determining  if user is passing or failing
 		
@@ -109,6 +113,26 @@ public class WeightedGradeCalculator_RST {
 		// Return
 		return average;
 		
+	}
+	
+	public static int weightedGradeCalc(int g, String type) {
+		
+		// Initialize weights
+		final double TEST_WEIGHT = 0.70;
+		final double RST_WEIGHT = 0.20;
+		final double EXAM_WEIGHT = 0.10;
+		int f = 0;
+		
+		// Dictate grade type using type variable
+		
+		if (type == "TEST")
+			return (int) (g * TEST_WEIGHT);
+		if (type == "RST")
+			return (int) (g * RST_WEIGHT);
+		if (type == "EXAM")
+			return (int) (g * EXAM_WEIGHT);
+			
+		return 0;
 	}
 }
 		

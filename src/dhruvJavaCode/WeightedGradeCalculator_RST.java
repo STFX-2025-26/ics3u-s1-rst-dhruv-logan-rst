@@ -48,7 +48,7 @@ public class WeightedGradeCalculator_RST {
 		
 		// Outputting final grade and determining  if user is passing or failing
 		finalGrade = weightedTests + rstGrade + examGrade;
-		System.out.println(finalGrade); 
+		System.out.println(finalGrade);  
 	}
 
 	

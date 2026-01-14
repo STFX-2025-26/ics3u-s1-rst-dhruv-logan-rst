@@ -36,7 +36,11 @@ public class RSTProject {
 		
 		System.out.println("Enter the " + studentNum + " student names: ");
 		
-	
+		for (int i=0; i<studentNum; i++) {
+			
+			studentNames[i] = sc.next();
+			System.out.println(studentNames[i]);
+		}
 		
 		
 		

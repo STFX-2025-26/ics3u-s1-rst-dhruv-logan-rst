@@ -7,11 +7,11 @@ public class WeightedGradeCalculator_RST {
 		// Variables
 		
 		int[] tests = new int[5];
-		int testAverage = 0;
-		int weightedTests = 0;
-		int rstGrade = 0;
-		int examGrade = 0;
-		int finalGrade = 0;
+		double testAverage = 0;
+		double weightedTests = 0;
+		double rstGrade = 0;
+		double examGrade = 0;
+		double finalGrade = 0;
 		
 		// Initial Launch
 		
@@ -23,7 +23,7 @@ public class WeightedGradeCalculator_RST {
 		System.out.println("\n\nFirstly, we will collect your 5 test grades! \nMake sure your inputting the percentage!(Positive number, between 0 - 100, no % sign!) ");
 		
 		for(int i = 0; i < 5; i++) {			// Test grade collection Loop
-			tests[i] = inputCollection(i);	
+			tests[i] = (int) inputCollection(i);	
 		}
 		
 		
@@ -43,20 +43,25 @@ public class WeightedGradeCalculator_RST {
 		// Calculating weighted grades
 		
 		weightedTests = weightedGradeCalc(testAverage,"TEST");		// Test
-		
+		System.out.println(weightedTests);
 		rstGrade = weightedGradeCalc(rstGrade,"RST");		// RST
-		
+		System.out.println(rstGrade);
+
 		examGrade = weightedGradeCalc(examGrade,"EXAM");		// Exam
-		
+		System.out.println(examGrade);
+
 		
 		// Outputting final grade and determining  if user is passing or failing
-		finalGrade = weightedTests + rstGrade + examGrade;
+		finalGrade = (weightedTests + rstGrade + examGrade);
 		
 		// Declare pass or fail, and output 
-		System.out.println("\n\nYour final score, with these grades would be a " + finalGrade + "%, meaning...");
+		System.out.printf("\n\nYour final score, with these grades would be a %.2f%n", finalGrade);
+		System.out.println("With this grade, that means...");
+		
+				
 		
 		if (finalGrade >= 50) 
-			System.out.println("\nCongrats! your passed!");
+			System.out.println("\nCongrats! you passed!");
 		
 		if (finalGrade < 50)
 			System.out.println("\nyou Failed... But dont worry! theres always next year!");
@@ -64,7 +69,7 @@ public class WeightedGradeCalculator_RST {
 	}
 
 	
-	public static int inputCollection(int n) {
+	public static double inputCollection(int n) {
 		// Initial Variables
 		int i = 0;
 		boolean correct = false;
@@ -109,9 +114,9 @@ public class WeightedGradeCalculator_RST {
 		return 0;
 	}
 	
-	public static int testAvgCalc(int[] a) {
+	public static double testAvgCalc(int[] a) {
 		//Initialize average 
-		int average = 0;
+		double average = 0;
 		
 		// Add 5 grades together
 		for(int i = 0; i < 5; i++) {
@@ -119,14 +124,14 @@ public class WeightedGradeCalculator_RST {
 		}
 		
 		// Calculate for final average
-		average = (int) Math.floor(average/5);
+		average = average/5;
 		
 		// Return
 		return average;
 		
 	}
 	
-	public static int weightedGradeCalc(int g, String type) {
+	public static double weightedGradeCalc(double g, String type) {
 		
 		// Initialize weights
 		final double TEST_WEIGHT = 0.70;
@@ -136,11 +141,11 @@ public class WeightedGradeCalculator_RST {
 		// Dictate grade type using type variable
 		
 		if (type == "TEST")
-			return (int) (g * TEST_WEIGHT);
+			return (g * TEST_WEIGHT);
 		if (type == "RST")
-			return (int) (g * RST_WEIGHT);
+			return (g * RST_WEIGHT);
 		if (type == "EXAM")
-			return (int) (g * EXAM_WEIGHT);
+			return (g * EXAM_WEIGHT);
 			
 		return 0;
 	}

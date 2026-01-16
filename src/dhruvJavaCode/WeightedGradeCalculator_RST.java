@@ -43,12 +43,10 @@ public class WeightedGradeCalculator_RST {
 		// Calculating weighted grades
 		
 		weightedTests = weightedGradeCalc(testAverage,"TEST");		// Test
-		System.out.println(weightedTests);
+		
 		rstGrade = weightedGradeCalc(rstGrade,"RST");		// RST
-		System.out.println(rstGrade);
 
 		examGrade = weightedGradeCalc(examGrade,"EXAM");		// Exam
-		System.out.println(examGrade);
 
 		
 		// Outputting final grade and determining  if user is passing or failing

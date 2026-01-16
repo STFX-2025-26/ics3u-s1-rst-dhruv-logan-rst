@@ -61,7 +61,7 @@ public class WeightedGradeCalculator_RST {
 				
 		
 		if (finalGrade >= 50) 
-			System.out.println("\nCongrats! you passed!"); 
+			System.out.println("\nCongrats! you passed!");
 		
 		if (finalGrade < 50)
 			System.out.println("\nyou Failed... But dont worry! theres always next year!");
